@@ -12,7 +12,7 @@ import HelpBanner from '../Components/HomeHelp'
 
 const Home = () => {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <RoadWorkerSection/>
       <StatsSection/>
       <CardSection/>

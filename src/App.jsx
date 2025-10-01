@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='overflow-hidden'>
         <BrowserRouter>
         <ScrollToTop/>
         <Navbar/>

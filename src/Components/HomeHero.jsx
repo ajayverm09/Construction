@@ -3,17 +3,21 @@ import { motion } from "framer-motion";
 
 const RoadWorkerSection = () => {
   return (
-    <section
-      className="w-full min-h-screen bg-cover bg-center flex items-center relative"
-      style={{
-        backgroundImage:
-          "url('https://html.tf.dreamitsolution.net/roadly/assets/images/home_one/hero-bg.png')",
-      }}
-    >
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+    <section className="w-full flex flex-col md:flex-row relative bg-black min-h-[auto] md:min-h-screen">
+      {/* Background image - hidden on mobile, shown on desktop */}
+      <div 
+        className="hidden md:block absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://html.tf.dreamitsolution.net/roadly/assets/images/home_one/hero-bg.png')",
+        }}
+      />
+      
+      {/* Dark overlay - hidden on mobile, shown on desktop */}
+      <div className="hidden md:block absolute inset-0 bg-black/40"></div>
 
-      <div className="relative z-10 w-full md:w-1/2 px-6 sm:px-12 md:px-20 py-20 flex flex-col justify-center min-h-[400px]">
+      {/* Text content - adjusted for mobile */}
+      <div className="relative z-10 w-full md:w-1/2 px-6 sm:px-12 md:px-20 py-12 md:py-20 flex flex-col justify-center min-h-[auto]">
         <motion.h1
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +51,7 @@ const RoadWorkerSection = () => {
         </motion.button>
       </div>
 
-      {/* Right side keeps background visible but no whitespace */}
+      {/* Right side spacer - only visible on desktop */}
       <div className="hidden md:block md:w-1/2" />
     </section>
   );
